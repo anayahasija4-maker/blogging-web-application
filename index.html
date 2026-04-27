@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog App</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="overlay">
+        <div class="header">
+            <h1>✍️ My Blogging Space</h1>
+            <p>Express your thoughts beautifully</p>
+        </div>
+
+        <div class="container">
+            <input type="text" id="title" placeholder="Enter Blog Title">
+
+            <textarea id="content" rows="5" placeholder="Write your blog..."></textarea>
+
+            <button onclick="addBlog()">🚀 Publish</button>
+        </div>
+
+        <h2 class="blog-heading">📚 All Blogs</h2>
+        <div id="blogList"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
