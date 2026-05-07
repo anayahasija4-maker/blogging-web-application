@@ -1,55 +1,91 @@
-// Load blogs when page opens
-window.onload = function () {
-    displayBlogs();
-};
+let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
 
 function addBlog() {
-    let title = document.getElementById("title").value;
-    let content = document.getElementById("content").value;
 
-    if (title === "" || content === "") {
-        alert("Please fill all fields!");
+    let title = document.getElementById("blogTitle").value;
+    let content = document.getElementById("blogContent").value;
+
+    if(title === "" || content === ""){
+        alert("Please fill all fields");
         return;
     }
 
-    let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
-
-    blogs.push({ title: title, content: content });
+    blogs.push({
+        title,
+        content
+    });
 
     localStorage.setItem("blogs", JSON.stringify(blogs));
 
-    document.getElementById("title").value = "";
-    document.getElementById("content").value = "";
+    document.getElementById("blogTitle").value = "";
+    document.getElementById("blogContent").value = "";
 
     displayBlogs();
 }
 
-function displayBlogs() {
+function displayBlogs(){
+
     let blogList = document.getElementById("blogList");
+
     blogList.innerHTML = "";
 
-    let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+    blogs.forEach((blog,index)=>{
 
-    blogs.forEach((blog, index) => {
-        let div = document.createElement("div");
-        div.className = "blog";
+        blogList.innerHTML += `
 
-        div.innerHTML = `
+        <div class="tracked-card">
+
             <h3>${blog.title}</h3>
-            <p>${blog.content}</p>
-            <button onclick="deleteBlog(${index})">Delete</button>
-        `;
 
-        blogList.appendChild(div);
+            <div class="btns">
+
+                <button onclick="viewBlog(${index})">View</button>
+
+                <button onclick="editBlog(${index})">Edit</button>
+
+                <button onclick="deleteBlog(${index})">Delete</button>
+
+            </div>
+
+        </div>
+
+        `;
     });
+
 }
 
-function deleteBlog(index) {
-    let blogs = JSON.parse(localStorage.getItem("blogs"));
+function viewBlog(index){
 
-    blogs.splice(index, 1);
+    alert(
+        "Title: " + blogs[index].title + "\n\n" +
+        blogs[index].content
+    );
+}
+
+function editBlog(index){
+
+    let newTitle = prompt("Edit Title", blogs[index].title);
+
+    let newContent = prompt("Edit Blog", blogs[index].content);
+
+    if(newTitle && newContent){
+
+        blogs[index].title = newTitle;
+        blogs[index].content = newContent;
+
+        localStorage.setItem("blogs", JSON.stringify(blogs));
+
+        displayBlogs();
+    }
+}
+
+function deleteBlog(index){
+
+    blogs.splice(index,1);
 
     localStorage.setItem("blogs", JSON.stringify(blogs));
 
     displayBlogs();
 }
+
+displayBlogs();

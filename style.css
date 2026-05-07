@@ -1,109 +1,342 @@
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643');
-    background-size: cover;
-    background-position: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-/* Dark overlay */
-.overlay {
-    background: rgba(0,0,0,0.6);
-    min-height: 100vh;
-    padding-bottom: 40px;
+body{
+    background:linear-gradient(135deg,#020617,#0f172a);
+    color:white;
 }
 
-/* Header */
-.header {
-    text-align: center;
-    color: white;
-    padding: 30px 10px;
+/* NAVBAR */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background:#020617;
 }
 
-.header h1 {
-    font-size: 3rem;
-    font-weight: 700;
+.logo{
+    color:#38bdf8;
+    font-size:28px;
 }
 
-.header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
 }
 
-/* Form Container */
-.container {
-    width: 60%;
-    margin: auto;
-    padding: 25px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    background: rgba(255,255,255,0.15);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+nav a{
+    text-decoration:none;
+    color:white;
 }
 
-/* Inputs FIXED */
-input {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: none;
-    font-size: 16px;
+nav a:hover{
+    color:#38bdf8;
 }
 
-textarea {
-    width: 100%;
-    padding: 14px;
-    border-radius: 8px;
-    border: none;
-    font-size: 16px;
-    margin-bottom: 15px;
+/* BANNER */
+
+.banner{
+    background:url('images/banner.jpg') center/cover no-repeat;
+    height:250px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
 }
 
-/* Button */
-button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(45deg, #ff7eb3, #ff758c);
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
+.banner h2{
+    font-size:50px;
 }
 
-button:hover {
-    opacity: 0.9;
+.banner p{
+    margin-top:10px;
+    color:#cbd5e1;
 }
 
-/* Blog Heading */
-.blog-heading {
-    text-align: center;
-    color: white;
-    margin-top: 30px;
+/* BLOGS */
+
+.blogs{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    padding:40px;
 }
 
-/* Blog Cards */
-.blog {
-    width: 60%;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    background: rgba(255,255,255,0.2);
-    color: white;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+.card{
+    background:#1e293b;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.3s;
 }
 
-.blog h3 {
-    margin: 0;
+.card:hover{
+    transform:translateY(-5px) scale(1.02);
 }
 
-/* Delete button */
-.blog button {
-    margin-top: 10px;
-    background: red;
-    width: auto;
-    padding: 8px 15px;
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-link{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h2{
+    font-size:50px;
+}
+
+/* CONTENT */
+
+.content{
+    max-width:800px;
+    margin:auto;
+    padding:40px;
+    line-height:2;
+    font-size:18px;
+}
+
+/* FORM */
+
+form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+    padding-bottom:50px;
+}
+
+form input,
+form textarea{
+    width:40%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+}
+
+form textarea{
+    height:120px;
+    resize:none;
+}
+
+form button{
+    padding:12px 30px;
+    background:#38bdf8;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+form button:hover{
+    background:#0ea5e9;
+}
+/* TEAM SECTION */
+
+.team-container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:40px;
+    flex-wrap:wrap;
+}
+
+.team-card{
+    background:#1e293b;
+    border-radius:15px;
+    overflow:hidden;
+    width:280px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.team-card:hover{
+    transform:translateY(-5px) scale(1.03);
+}
+
+.team-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.team-content{
+    padding:20px;
+}
+
+.team-content h3{
+    margin-bottom:10px;
+}
+
+.team-content p{
+    color:#38bdf8;
+}
+/* CREATE BLOG */
+
+.create-blog{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:50px 20px;
+}
+
+.create-blog h2{
+    margin-bottom:20px;
+    font-size:35px;
+}
+
+.create-blog input,
+.create-blog textarea{
+
+    width:60%;
+    padding:15px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.create-blog textarea{
+    height:150px;
+    resize:none;
+}
+
+.create-blog button{
+
+    margin-top:10px;
+    padding:12px 30px;
+    border:none;
+    border-radius:10px;
+    background:#38bdf8;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.create-blog button:hover{
+    background:#0ea5e9;
+}
+
+/* TRACKED BLOGS */
+
+.tracked-section{
+    padding:40px;
+}
+
+.tracked-section h2{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:35px;
+}
+
+.tracked-blogs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+.tracked-card{
+
+    background:#1e293b;
+    padding:20px;
+    border-radius:12px;
+    width:250px;
+}
+
+.tracked-card h3{
+    margin-bottom:20px;
+}
+
+.btns{
+    display:flex;
+    gap:10px;
+}
+
+.btns button{
+
+    padding:8px 15px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#38bdf8;
+}
+
+.btns button:hover{
+    background:#0ea5e9;
+}
+
+/* IDEAS */
+
+.ideas-heading{
+    text-align:center;
+    margin-top:50px;
+}
+
+.ideas-heading h2{
+    font-size:35px;
+}
+
+.ideas-row{
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:nowrap;
+
+    overflow-x:auto;
+
+    padding:40px;
+}
+
+.small-card{
+
+    background:#1e293b;
+    border-radius:15px;
+    overflow:hidden;
+    min-width:220px;
+
+    transition:0.3s;
+}
+
+.small-card:hover{
+    transform:scale(1.03);
+}
+
+.small-card img{
+
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.small-content{
+    padding:15px;
+}
+
+.small-content h3{
+    text-align:center;
 }

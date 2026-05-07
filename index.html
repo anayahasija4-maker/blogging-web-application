@@ -1,35 +1,111 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Blog App</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+    <title>MyBlog</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="overlay">
-        <div class="header">
-            <h1>✍️ My Blogging Space</h1>
-            <p>Express your thoughts beautifully</p>
+<!-- NAVBAR -->
+
+<nav>
+    <h1 class="logo">MyBlog</h1>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- BANNER -->
+
+<section class="banner">
+    <h2>Explore Creative Blog Ideas</h2>
+    <p>"Write what should not be forgotten."</p>
+</section>
+
+<!-- CREATE BLOG -->
+
+<section class="create-blog">
+
+    <h2>Create Your Blog</h2>
+
+    <input type="text" id="blogTitle" placeholder="Write title of blog">
+
+    <textarea id="blogContent" placeholder="Write your blog"></textarea>
+
+    <button onclick="addBlog()">Publish Blog</button>
+
+</section>
+
+<!-- TRACK BLOGS -->
+
+<section class="tracked-section">
+
+    <h2>Your Blogs</h2>
+
+    <div id="blogList" class="tracked-blogs"></div>
+
+</section>
+
+<!-- BLOG IDEAS -->
+
+<section class="ideas-heading">
+    <h2>Blog Ideas / Examples</h2>
+</section>
+
+<section class="ideas-row">
+
+    <a href="html.html" class="card-link">
+        <div class="small-card">
+            <img src="images/html.png">
+            <div class="small-content">
+                <h3>HTML</h3>
+            </div>
         </div>
+    </a>
 
-        <div class="container">
-            <input type="text" id="title" placeholder="Enter Blog Title">
-
-            <textarea id="content" rows="5" placeholder="Write your blog..."></textarea>
-
-            <button onclick="addBlog()">🚀 Publish</button>
+    <a href="css.html" class="card-link">
+        <div class="small-card">
+            <img src="images/css.png">
+            <div class="small-content">
+                <h3>CSS</h3>
+            </div>
         </div>
+    </a>
 
-        <h2 class="blog-heading">📚 All Blogs</h2>
-        <div id="blogList"></div>
-    </div>
+    <a href="js.html" class="card-link">
+        <div class="small-card">
+            <img src="images/js.png">
+            <div class="small-content">
+                <h3>JavaScript</h3>
+            </div>
+        </div>
+    </a>
 
-    <script src="script.js"></script>
+    <a href="dom.html" class="card-link">
+        <div class="small-card">
+            <img src="images/dom.png">
+            <div class="small-content">
+                <h3>DOM</h3>
+            </div>
+        </div>
+    </a>
+
+    <a href="bom.html" class="card-link">
+        <div class="small-card">
+            <img src="images/bom.png">
+            <div class="small-content">
+                <h3>BOM</h3>
+            </div>
+        </div>
+    </a>
+
+</section>
+
+<script src="script.js"></script>
 
 </body>
 </html>
